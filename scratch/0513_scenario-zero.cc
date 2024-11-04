@@ -37,7 +37,7 @@ using namespace mmwave;
  * 
  */
 
-NS_LOG_COMPONENT_DEFINE ("ScenarioZero");
+NS_LOG_COMPONENT_DEFINE ("EEscenarios");
 
 void
 PrintGnuplottableUeListToFile (std::string filename)
@@ -159,6 +159,42 @@ PrintPosition (std::string filename, NodeContainer ueNodes)
 
 }
 
+Ptr<ListPositionAllocator> 
+SetPossitionfromfile (std::string filename)
+{
+  Ptr<ListPositionAllocator> uePositionAlloc = CreateObject<ListPositionAllocator> ();  
+
+  std::ifstream outFile;
+  outFile.open (filename.c_str (), std::ios_base::in);
+
+  if (!outFile.is_open ()){
+      NS_LOG_ERROR ("Can't open file " << filename);
+      return uePositionAlloc;
+  }
+
+  std::string line;
+  while(std::getline(outFile, line)) {
+    std::istringstream iss(line);
+    std::vector<double> numbers;
+    double number;
+
+    while(iss >> number){
+        numbers.push_back(number); 
+        std::cout << number << ' '<< std::endl;;
+    }
+
+    double x = numbers[0];
+    double y = numbers[1];
+
+    uePositionAlloc->Add (Vector (x, y, 2));
+  }
+  outFile.close(); 
+ 
+  return uePositionAlloc;
+}
+
+
+
 
 
 
@@ -197,7 +233,7 @@ static ns3::GlobalValue
                              "E2 Indication Periodicity reports (value in seconds)",
                              ns3::DoubleValue (0.1), ns3::MakeDoubleChecker<double> (0.01, 2.0));
 
-static ns3::GlobalValue g_simTime ("simTime", "Simulation time in seconds", ns3::DoubleValue (1),
+static ns3::GlobalValue g_simTime ("simTime", "Simulation time in seconds", ns3::DoubleValue (5),
                                    ns3::MakeDoubleChecker<double> (0.1, 100.0));
 
 static ns3::GlobalValue g_outageThreshold ("outageThreshold",
@@ -242,32 +278,37 @@ main (int argc, char *argv[])
    LogComponentEnable ("MmWaveEnbNetDevice", LOG_LEVEL_DEBUG);
 
   // The maximum X coordinate of the scenario
-  double maxXAxis = 4000;
+  double maxXAxis = 100;
   // The maximum Y coordinate of the scenario
-  double maxYAxis = 4000;
-  
+  //double maxYAxis = 400;
+
   // addiding for test
-  std::string TracePath = "trace/";
-  bool stopMove = false;
+  std::string TracePath = "None";
+  std::string poss_file = "None";
+
+
   uint8_t bs1 = 1;
   uint8_t bs2 = 1;
   uint8_t bs3 = 1;
   uint8_t bs4 = 1;
-
+  bool stopMove = false;
   
   // Command line arguments
   CommandLine cmd;
   cmd.AddValue("TracePath", "Path for saving tracing File", TracePath);
+  cmd.AddValue("poss_file", "UE Possition to be set", poss_file);
   cmd.AddValue("bs1", "BS1 ON/OFF State", bs1);
   cmd.AddValue("bs2", "BS2 ON/OFF State", bs2);
   cmd.AddValue("bs3", "BS3 ON/OFF State", bs3);
   cmd.AddValue("bs4", "BS4 ON/OFF State", bs4);
+  cmd.AddValue("maxXAxis", "max values", maxXAxis);
   cmd.Parse (argc, argv);
 
   uint8_t bsState[4] = {bs1, bs2,bs3,bs4} ;
+  if (poss_file !="None" ){stopMove = true;}
+  double maxYAxis = maxXAxis;
 
-
- // 20240513 Trace file 
+ // 20240513 Trace file % 
   Config::SetDefault ("ns3::MmWaveBearerStatsConnector::EnbHandoverStartOutputFilename",  StringValue (TracePath+"EnbHandoverStartStats.txt"));
   Config::SetDefault ("ns3::MmWaveBearerStatsConnector::EnbHandoverEndOutputFilename", StringValue ( TracePath +"EnbHandoverEndStats.txt"));
   Config::SetDefault ("ns3::MmWaveBearerStatsConnector::MmWaveSinrOutputFilename", StringValue ( TracePath +"MmWaveSinrTime.txt"));
@@ -419,7 +460,7 @@ main (int argc, char *argv[])
   // Center frequency in Hz
   double centerFrequency = 3.5e9;
   // Distance between the mmWave BSs and the two co-located LTE and mmWave BSs in meters
-  double isd = 1000; // (interside distance)
+  double isd = maxXAxis/2; // (interside distance)
   // Number of antennas in each UE
   int numAntennasMcUe = 1;
   // Number of antennas in each mmWave BS
@@ -511,7 +552,7 @@ main (int argc, char *argv[])
       x = isd * cos ((2 * M_PI * i) / (nConstellation));
       y = isd * sin ((2 * M_PI * i) / (nConstellation));
       if (bsState[i+1] == 1)
-      enbPositionAlloc->Add (Vector (centerPosition.x + x, centerPosition.y + y, 3));
+        enbPositionAlloc->Add (Vector (centerPosition.x + x, centerPosition.y + y, 3));
     }
 
   MobilityHelper enbmobility;
@@ -536,40 +577,26 @@ main (int argc, char *argv[])
           uemobility.SetPositionAllocator (uePositionAlloc);
           uemobility.Install (ueNodes);
   } else {
-            Ptr<UniformDiscPositionAllocator> uePositionAlloc = CreateObject<UniformDiscPositionAllocator> ();
-
-          uePositionAlloc->SetX (centerPosition.x);
-          uePositionAlloc->SetY (centerPosition.y);
-          uePositionAlloc->SetRho (isd);
-          Ptr<UniformRandomVariable> speed = CreateObject<UniformRandomVariable> ();
-          speed->SetAttribute ("Min", DoubleValue (0.0));
-          speed->SetAttribute ("Max", DoubleValue (0.0));
-
-          uemobility.SetMobilityModel ("ns3::RandomWalk2dOutdoorMobilityModel", "Speed",
-                                       PointerValue (speed), "Bounds",
-                                       RectangleValue (Rectangle (0, maxXAxis, 0, maxYAxis)));
+          Ptr<ListPositionAllocator> uePositionAlloc = SetPossitionfromfile (poss_file);
+          uemobility.SetMobilityModel ("ns3::ConstantPositionMobilityModel");
           uemobility.SetPositionAllocator (uePositionAlloc);
           uemobility.Install (ueNodes);
 
   }
   
 
-
-
   // Install mmWave, lte, mc Devices to the nodes
   NetDeviceContainer lteEnbDevs = mmwaveHelper->InstallLteEnbDevice (lteEnbNodes);
   NetDeviceContainer mmWaveEnbDevs = mmwaveHelper->InstallEnbDevice (mmWaveEnbNodes);
   NetDeviceContainer mcUeDevs = mmwaveHelper->InstallMcUeDevice (ueNodes);
- // 0513 add change power
-  /*
-  int index_offeNB = 0;
+ /*
   for (int i = 0; i<nMmWaveEnbNodes; i++) {
-    if (i==index_offeNB){
+    if (bsState[i] == 0){
       Ptr<MmWaveEnbPhy> mmWavePhy = mmWaveEnbDevs.Get (i)->GetObject<MmWaveEnbNetDevice> ()->GetPhy ();
-      mmWavePhy->SetTxPower (0);
+      mmWavePhy->SetTxPower (1);
     }
   }	
-*/
+  */
   // Install the IP stack on the UEs
   internet.Install (ueNodes);
   Ipv4InterfaceContainer ueIpIface;

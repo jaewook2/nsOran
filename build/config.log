@@ -1,13 +1,13 @@
-# project ns (3.33) configured on Thu Feb 22 20:27:08 2024 by
+# project ns (3.33) configured on Sun Jul 14 21:35:07 2024 by
 # waf 2.0.21 (abi 20, python 30a0cf0 on linux)
-# using ./waf configure
+# using ./waf configure --enable-examples --enable-tests
 #
 ----------------------------------------
 Setting top to
-/home/boo/ns_sinr_orn
+/home/ionlab/nsOran
 ----------------------------------------
 Setting out to
-/home/boo/ns_sinr_orn/build
+/home/ionlab/nsOran/build
 ----------------------------------------
 Checking for 'gcc' (C compiler)
 find program=['gcc', 'cc'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/snap/bin'] var='CC' -> ['/usr/bin/gcc']
@@ -766,7 +766,7 @@ int main() { return 0; }
 <==
 [1/1] Compiling [32mbuild/.conf_check_040c0dd0eda912b8b29d7d1ce92ad6d6/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-Wl,--soname=foo', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_040c0dd0eda912b8b29d7d1ce92ad6d6/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-Wl,--soname=foo', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o/home/ionlab/nsOran/build/.conf_check_040c0dd0eda912b8b29d7d1ce92ad6d6/testbuild/test.cpp.1.o']
 ok
 ------------------------------------------------------
 Checking for compilation flag -std=c++11 support
@@ -775,7 +775,7 @@ int main() { return 0; }
 <==
 [1/1] Compiling [32mbuild/.conf_check_040c0dd0eda912b8b29d7d1ce92ad6d6/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_040c0dd0eda912b8b29d7d1ce92ad6d6/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o/home/ionlab/nsOran/build/.conf_check_040c0dd0eda912b8b29d7d1ce92ad6d6/testbuild/test.cpp.1.o']
 ok
 ------------------------------------------------------
 Checking boost includes
@@ -920,7 +920,7 @@ Trying pattern boost_signals.so$
 Trying pattern boost_signals.so$
 Trying pattern boost_signals
 lib signals not found in /usr/lib/x86_64-linux-gnu
-from /home/boo/ns_sinr_orn: The configuration failed
+from /home/ionlab/nsOran: The configuration failed
 ------------------------------------------------------
 Checking boost includes
 1_74
@@ -1064,7 +1064,7 @@ Trying pattern boost_signals.so$
 Trying pattern boost_signals.so$
 Trying pattern boost_signals
 lib signals not found in /usr/lib/x86_64-linux-gnu
-from /home/boo/ns_sinr_orn: The configuration failed
+from /home/ionlab/nsOran: The configuration failed
 ------------------------------------------------------
 Checking for program 'python'
 /usr/bin/python3
@@ -1181,10 +1181,10 @@ int main(int argc, char **argv)
 <==
 [1/2] Compiling [32mbuild/.conf_check_b367436918f7cae05acae23362c521b8/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-g', '-fstack-protector-strong', '-g', '-fwrapv', '-O2', '-I/usr/include/python3.10', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python3/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python3/dist-packages"', '-DNDEBUG', '../test.cpp', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_b367436918f7cae05acae23362c521b8/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-g', '-fstack-protector-strong', '-g', '-fwrapv', '-O2', '-I/usr/include/python3.10', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python3/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python3/dist-packages"', '-DNDEBUG', '../test.cpp', '-c', '-o/home/ionlab/nsOran/build/.conf_check_b367436918f7cae05acae23362c521b8/testbuild/test.cpp.1.o']
 [2/2] Linking [33mbuild/.conf_check_b367436918f7cae05acae23362c521b8/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/home/boo/ns_sinr_orn/build/.conf_check_b367436918f7cae05acae23362c521b8/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-L/usr/lib/python3.10/config-3.10-x86_64-linux-gnu', '-L/usr/lib/x86_64-linux-gnu', '-lpython3.10', '-lcrypt', '-ldl', '-lm', '-lm', '-lpython3.10', '-lcrypt', '-ldl', '-lm', '-lm']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/ionlab/nsOran/build/.conf_check_b367436918f7cae05acae23362c521b8/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-L/usr/lib/python3.10/config-3.10-x86_64-linux-gnu', '-L/usr/lib/x86_64-linux-gnu', '-lpython3.10', '-lcrypt', '-ldl', '-lm', '-lm', '-lpython3.10', '-lcrypt', '-ldl', '-lm', '-lm']
 yes
 --------------------------------------------------------------------------
 Asking python-config for pyext '--cflags --libs --ldflags' flags
@@ -1223,10 +1223,10 @@ int main(int argc, char **argv)
 <==
 [1/2] Compiling [32mbuild/.conf_check_66b724fcf417dea0fd77d12e509b70c6/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-fPIC', '-g', '-fstack-protector-strong', '-g', '-fwrapv', '-O2', '-I/usr/include/python3.10', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python3/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python3/dist-packages"', '-DHAVE_PYEMBED=1', '-DNDEBUG', '../test.cpp', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_66b724fcf417dea0fd77d12e509b70c6/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-fPIC', '-g', '-fstack-protector-strong', '-g', '-fwrapv', '-O2', '-I/usr/include/python3.10', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python3/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python3/dist-packages"', '-DHAVE_PYEMBED=1', '-DNDEBUG', '../test.cpp', '-c', '-o/home/ionlab/nsOran/build/.conf_check_66b724fcf417dea0fd77d12e509b70c6/testbuild/test.cpp.1.o']
 [2/2] Linking [33mbuild/.conf_check_66b724fcf417dea0fd77d12e509b70c6/testbuild/testprog.cpython-310-x86_64-linux-gnu.so[0m
 
-['/usr/bin/g++', '-shared', 'test.cpp.1.o', '-o/home/boo/ns_sinr_orn/build/.conf_check_66b724fcf417dea0fd77d12e509b70c6/testbuild/testprog.cpython-310-x86_64-linux-gnu.so', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-L/usr/lib/python3.10/config-3.10-x86_64-linux-gnu', '-L/usr/lib/x86_64-linux-gnu', '-lcrypt', '-ldl', '-lm', '-lm', '-lcrypt', '-ldl', '-lm', '-lm']
+['/usr/bin/g++', '-shared', 'test.cpp.1.o', '-o/home/ionlab/nsOran/build/.conf_check_66b724fcf417dea0fd77d12e509b70c6/testbuild/testprog.cpython-310-x86_64-linux-gnu.so', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-L/usr/lib/python3.10/config-3.10-x86_64-linux-gnu', '-L/usr/lib/x86_64-linux-gnu', '-lcrypt', '-ldl', '-lm', '-lm', '-lcrypt', '-ldl', '-lm', '-lm']
 yes
 --------------------------------------------------------------------------
 Checking for compilation flag -fvisibility=hidden support
@@ -1235,7 +1235,7 @@ int main() { return 0; }
 <==
 [1/1] Compiling [32mbuild/.conf_check_040c0dd0eda912b8b29d7d1ce92ad6d6/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-fvisibility=hidden', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python3/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python3/dist-packages"', '-DHAVE_PYEMBED=1', '-DHAVE_PYEXT=1', '-DHAVE_PYTHON_H=1', '../test.cpp', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_040c0dd0eda912b8b29d7d1ce92ad6d6/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-fvisibility=hidden', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python3/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python3/dist-packages"', '-DHAVE_PYEMBED=1', '-DHAVE_PYEXT=1', '-DHAVE_PYTHON_H=1', '../test.cpp', '-c', '-o/home/ionlab/nsOran/build/.conf_check_040c0dd0eda912b8b29d7d1ce92ad6d6/testbuild/test.cpp.1.o']
 ok
 --------------------------------------------------------------------------
 Checking for compilation flag -Wno-array-bounds support
@@ -1244,7 +1244,7 @@ int main() { return 0; }
 <==
 [1/1] Compiling [32mbuild/.conf_check_040c0dd0eda912b8b29d7d1ce92ad6d6/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-Wno-array-bounds', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python3/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python3/dist-packages"', '-DHAVE_PYEMBED=1', '-DHAVE_PYEXT=1', '-DHAVE_PYTHON_H=1', '../test.cpp', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_040c0dd0eda912b8b29d7d1ce92ad6d6/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-Wno-array-bounds', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python3/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python3/dist-packages"', '-DHAVE_PYEMBED=1', '-DHAVE_PYEXT=1', '-DHAVE_PYTHON_H=1', '../test.cpp', '-c', '-o/home/ionlab/nsOran/build/.conf_check_040c0dd0eda912b8b29d7d1ce92ad6d6/testbuild/test.cpp.1.o']
 ok
 --------------------------------------------------------------------------
 Checking for pybindgen location
@@ -1257,7 +1257,7 @@ err: Traceback (most recent call last):
 ModuleNotFoundError: No module named 'pybindgen'
 
 not found
-from /home/boo/ns_sinr_orn/bindings/python: Could not find the python module 'pybindgen'
+from /home/ionlab/nsOran/bindings/python: Could not find the python module 'pybindgen'
 --------------------------------------------------------------------------
 Checking for click location
 not found
@@ -1265,12 +1265,12 @@ not found
 Checking for program 'pkg-config'
 not found
 find program=['pkg-config'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/snap/bin'] var='PKGCONFIG' -> None
-from /home/boo/ns_sinr_orn/src/config-store: Could not find the program ['pkg-config']
+from /home/ionlab/nsOran/src/config-store: Could not find the program ['pkg-config']
 --------------------------------------------------------------------------
 Checking for program 'pkg-config'
 not found
 find program=['pkg-config'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/snap/bin'] var='PKGCONFIG' -> None
-from /home/boo/ns_sinr_orn/src/config-store: Could not find the program ['pkg-config']
+from /home/ionlab/nsOran/src/config-store: Could not find the program ['pkg-config']
 --------------------------------------------------------------------------
 checking for uint128_t
 ==>
@@ -1287,7 +1287,7 @@ checking for uint128_t
 <==
 [1/2] Compiling [32mbuild/.conf_check_2f39551c44a4e78a2e4469b1bac2d149/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_2f39551c44a4e78a2e4469b1bac2d149/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o/home/ionlab/nsOran/build/.conf_check_2f39551c44a4e78a2e4469b1bac2d149/testbuild/test.cpp.1.o']
 err: ../test.cpp: In function ‘int main(int, char**)’:
 ../test.cpp:6:14: error: ‘uint128_t’ was not declared in this scope; did you mean ‘uint8_t’?
     6 |         if ((uint128_t *) 0) return 0;
@@ -1305,16 +1305,16 @@ err: ../test.cpp: In function ‘int main(int, char**)’:
       |                     ^~~~~~~~~
       |                     uint8_t
 
-from /home/boo/ns_sinr_orn/src/core: Test does not build: Traceback (most recent call last):
-  File "/home/boo/ns_sinr_orn/.waf3-2.0.21-c6c9a875365426e5928462b9b74d40b5/waflib/Configure.py", line 335, in run_build
+from /home/ionlab/nsOran/src/core: Test does not build: Traceback (most recent call last):
+  File "/home/ionlab/nsOran/.waf3-2.0.21-c6c9a875365426e5928462b9b74d40b5/waflib/Configure.py", line 335, in run_build
     bld.compile()
-  File "/home/boo/ns_sinr_orn/.waf3-2.0.21-c6c9a875365426e5928462b9b74d40b5/waflib/Build.py", line 176, in compile
+  File "/home/ionlab/nsOran/.waf3-2.0.21-c6c9a875365426e5928462b9b74d40b5/waflib/Build.py", line 176, in compile
     raise Errors.BuildError(self.producer.error)
 waflib.Errors.BuildError: Build failed
  -> task in 'testprog' failed with exit status 1 (run with -v to display more information)
 
 not found
-from /home/boo/ns_sinr_orn/src/core: The configuration failed
+from /home/ionlab/nsOran/src/core: The configuration failed
 --------------------------------------------------------------------------
 checking for __uint128_t
 ==>
@@ -1331,10 +1331,10 @@ checking for __uint128_t
 <==
 [1/2] Compiling [32mbuild/.conf_check_9858f12ee3e8fd10ddbed7322e7f6d39/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_9858f12ee3e8fd10ddbed7322e7f6d39/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o/home/ionlab/nsOran/build/.conf_check_9858f12ee3e8fd10ddbed7322e7f6d39/testbuild/test.cpp.1.o']
 [2/2] Linking [33mbuild/.conf_check_9858f12ee3e8fd10ddbed7322e7f6d39/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/home/boo/ns_sinr_orn/build/.conf_check_9858f12ee3e8fd10ddbed7322e7f6d39/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/ionlab/nsOran/build/.conf_check_9858f12ee3e8fd10ddbed7322e7f6d39/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 --------------------------------------------------------------------------
 Checking high precision implementation
@@ -1352,10 +1352,10 @@ int main(int argc, char **argv) {
 <==
 [1/2] Compiling [32mbuild/.conf_check_78f27eb1cb7d718aa77ac6221c1170cb/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '../test.cpp', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_78f27eb1cb7d718aa77ac6221c1170cb/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '../test.cpp', '-c', '-o/home/ionlab/nsOran/build/.conf_check_78f27eb1cb7d718aa77ac6221c1170cb/testbuild/test.cpp.1.o']
 [2/2] Linking [33mbuild/.conf_check_78f27eb1cb7d718aa77ac6221c1170cb/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/home/boo/ns_sinr_orn/build/.conf_check_78f27eb1cb7d718aa77ac6221c1170cb/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/ionlab/nsOran/build/.conf_check_78f27eb1cb7d718aa77ac6221c1170cb/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 --------------------------------------------------------------------------
 Checking for header inttypes.h
@@ -1370,10 +1370,10 @@ int main(int argc, char **argv) {
 <==
 [1/2] Compiling [32mbuild/.conf_check_fc28ad0b265dbc0ea499b0019a3e29a9/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '../test.cpp', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_fc28ad0b265dbc0ea499b0019a3e29a9/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '../test.cpp', '-c', '-o/home/ionlab/nsOran/build/.conf_check_fc28ad0b265dbc0ea499b0019a3e29a9/testbuild/test.cpp.1.o']
 [2/2] Linking [33mbuild/.conf_check_fc28ad0b265dbc0ea499b0019a3e29a9/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/home/boo/ns_sinr_orn/build/.conf_check_fc28ad0b265dbc0ea499b0019a3e29a9/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/ionlab/nsOran/build/.conf_check_fc28ad0b265dbc0ea499b0019a3e29a9/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 --------------------------------------------------------------------------
 Checking for header sys/inttypes.h
@@ -1388,22 +1388,22 @@ int main(int argc, char **argv) {
 <==
 [1/2] Compiling [32mbuild/.conf_check_be8f82a542d6af9f438e0ae24dca5ce1/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_be8f82a542d6af9f438e0ae24dca5ce1/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o/home/ionlab/nsOran/build/.conf_check_be8f82a542d6af9f438e0ae24dca5ce1/testbuild/test.cpp.1.o']
 err: ../test.cpp:1:10: fatal error: sys/inttypes.h: No such file or directory
     1 | #include <sys/inttypes.h>
       |          ^~~~~~~~~~~~~~~~
 compilation terminated.
 
-from /home/boo/ns_sinr_orn/src/core: Test does not build: Traceback (most recent call last):
-  File "/home/boo/ns_sinr_orn/.waf3-2.0.21-c6c9a875365426e5928462b9b74d40b5/waflib/Configure.py", line 335, in run_build
+from /home/ionlab/nsOran/src/core: Test does not build: Traceback (most recent call last):
+  File "/home/ionlab/nsOran/.waf3-2.0.21-c6c9a875365426e5928462b9b74d40b5/waflib/Configure.py", line 335, in run_build
     bld.compile()
-  File "/home/boo/ns_sinr_orn/.waf3-2.0.21-c6c9a875365426e5928462b9b74d40b5/waflib/Build.py", line 176, in compile
+  File "/home/ionlab/nsOran/.waf3-2.0.21-c6c9a875365426e5928462b9b74d40b5/waflib/Build.py", line 176, in compile
     raise Errors.BuildError(self.producer.error)
 waflib.Errors.BuildError: Build failed
  -> task in 'testprog' failed with exit status 1 (run with -v to display more information)
 
 not found
-from /home/boo/ns_sinr_orn/src/core: The configuration failed
+from /home/ionlab/nsOran/src/core: The configuration failed
 --------------------------------------------------------------------------
 Checking for header sys/types.h
 ==>
@@ -1417,10 +1417,10 @@ int main(int argc, char **argv) {
 <==
 [1/2] Compiling [32mbuild/.conf_check_8921d893cae40686018a1a0f274b919a/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_8921d893cae40686018a1a0f274b919a/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o/home/ionlab/nsOran/build/.conf_check_8921d893cae40686018a1a0f274b919a/testbuild/test.cpp.1.o']
 [2/2] Linking [33mbuild/.conf_check_8921d893cae40686018a1a0f274b919a/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/home/boo/ns_sinr_orn/build/.conf_check_8921d893cae40686018a1a0f274b919a/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/ionlab/nsOran/build/.conf_check_8921d893cae40686018a1a0f274b919a/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 --------------------------------------------------------------------------
 Checking for header sys/stat.h
@@ -1435,10 +1435,10 @@ int main(int argc, char **argv) {
 <==
 [1/2] Compiling [32mbuild/.conf_check_35c3b87a09b47b232105a7d7cd0283a2/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '../test.cpp', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_35c3b87a09b47b232105a7d7cd0283a2/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '../test.cpp', '-c', '-o/home/ionlab/nsOran/build/.conf_check_35c3b87a09b47b232105a7d7cd0283a2/testbuild/test.cpp.1.o']
 [2/2] Linking [33mbuild/.conf_check_35c3b87a09b47b232105a7d7cd0283a2/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/home/boo/ns_sinr_orn/build/.conf_check_35c3b87a09b47b232105a7d7cd0283a2/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/ionlab/nsOran/build/.conf_check_35c3b87a09b47b232105a7d7cd0283a2/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 --------------------------------------------------------------------------
 Checking for header dirent.h
@@ -1453,10 +1453,10 @@ int main(int argc, char **argv) {
 <==
 [1/2] Compiling [32mbuild/.conf_check_42a2d945c05247460c5b0f87cb6870b7/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '../test.cpp', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_42a2d945c05247460c5b0f87cb6870b7/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '../test.cpp', '-c', '-o/home/ionlab/nsOran/build/.conf_check_42a2d945c05247460c5b0f87cb6870b7/testbuild/test.cpp.1.o']
 [2/2] Linking [33mbuild/.conf_check_42a2d945c05247460c5b0f87cb6870b7/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/home/boo/ns_sinr_orn/build/.conf_check_42a2d945c05247460c5b0f87cb6870b7/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/ionlab/nsOran/build/.conf_check_42a2d945c05247460c5b0f87cb6870b7/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 --------------------------------------------------------------------------
 Checking for header signal.h
@@ -1471,10 +1471,10 @@ int main(int argc, char **argv) {
 <==
 [1/2] Compiling [32mbuild/.conf_check_4ecf044f3ad7de926ece45637d37a7c2/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '../test.cpp', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_4ecf044f3ad7de926ece45637d37a7c2/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '../test.cpp', '-c', '-o/home/ionlab/nsOran/build/.conf_check_4ecf044f3ad7de926ece45637d37a7c2/testbuild/test.cpp.1.o']
 [2/2] Linking [33mbuild/.conf_check_4ecf044f3ad7de926ece45637d37a7c2/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/home/boo/ns_sinr_orn/build/.conf_check_4ecf044f3ad7de926ece45637d37a7c2/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/ionlab/nsOran/build/.conf_check_4ecf044f3ad7de926ece45637d37a7c2/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 --------------------------------------------------------------------------
 Checking for header pthread.h
@@ -1491,10 +1491,10 @@ int main ()
 <==
 [1/2] Compiling [32mbuild/.conf_check_540e61053391cd4cb697e5746d5ea1e2/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-pthread', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_SIGNAL_H=1', '../test.cpp', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_540e61053391cd4cb697e5746d5ea1e2/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-pthread', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_SIGNAL_H=1', '../test.cpp', '-c', '-o/home/ionlab/nsOran/build/.conf_check_540e61053391cd4cb697e5746d5ea1e2/testbuild/test.cpp.1.o']
 [2/2] Linking [33mbuild/.conf_check_540e61053391cd4cb697e5746d5ea1e2/testbuild/testprog[0m
 
-['/usr/bin/g++', '-pthread', 'test.cpp.1.o', '-o/home/boo/ns_sinr_orn/build/.conf_check_540e61053391cd4cb697e5746d5ea1e2/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', '-pthread', 'test.cpp.1.o', '-o/home/ionlab/nsOran/build/.conf_check_540e61053391cd4cb697e5746d5ea1e2/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 --------------------------------------------------------------------------
 Checking for header stdint.h
@@ -1509,10 +1509,10 @@ int main(int argc, char **argv) {
 <==
 [1/2] Compiling [32mbuild/.conf_check_78f27eb1cb7d718aa77ac6221c1170cb/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '../test.cpp', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_78f27eb1cb7d718aa77ac6221c1170cb/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '../test.cpp', '-c', '-o/home/ionlab/nsOran/build/.conf_check_78f27eb1cb7d718aa77ac6221c1170cb/testbuild/test.cpp.1.o']
 [2/2] Linking [33mbuild/.conf_check_78f27eb1cb7d718aa77ac6221c1170cb/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/home/boo/ns_sinr_orn/build/.conf_check_78f27eb1cb7d718aa77ac6221c1170cb/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/ionlab/nsOran/build/.conf_check_78f27eb1cb7d718aa77ac6221c1170cb/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 --------------------------------------------------------------------------
 Checking for header inttypes.h
@@ -1527,10 +1527,10 @@ int main(int argc, char **argv) {
 <==
 [1/2] Compiling [32mbuild/.conf_check_fc28ad0b265dbc0ea499b0019a3e29a9/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '../test.cpp', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_fc28ad0b265dbc0ea499b0019a3e29a9/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '../test.cpp', '-c', '-o/home/ionlab/nsOran/build/.conf_check_fc28ad0b265dbc0ea499b0019a3e29a9/testbuild/test.cpp.1.o']
 [2/2] Linking [33mbuild/.conf_check_fc28ad0b265dbc0ea499b0019a3e29a9/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/home/boo/ns_sinr_orn/build/.conf_check_fc28ad0b265dbc0ea499b0019a3e29a9/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/ionlab/nsOran/build/.conf_check_fc28ad0b265dbc0ea499b0019a3e29a9/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 --------------------------------------------------------------------------
 Checking for header sys/inttypes.h
@@ -1545,22 +1545,22 @@ int main(int argc, char **argv) {
 <==
 [1/2] Compiling [32mbuild/.conf_check_be8f82a542d6af9f438e0ae24dca5ce1/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_be8f82a542d6af9f438e0ae24dca5ce1/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o/home/ionlab/nsOran/build/.conf_check_be8f82a542d6af9f438e0ae24dca5ce1/testbuild/test.cpp.1.o']
 err: ../test.cpp:1:10: fatal error: sys/inttypes.h: No such file or directory
     1 | #include <sys/inttypes.h>
       |          ^~~~~~~~~~~~~~~~
 compilation terminated.
 
-from /home/boo/ns_sinr_orn/src/core: Test does not build: Traceback (most recent call last):
-  File "/home/boo/ns_sinr_orn/.waf3-2.0.21-c6c9a875365426e5928462b9b74d40b5/waflib/Configure.py", line 335, in run_build
+from /home/ionlab/nsOran/src/core: Test does not build: Traceback (most recent call last):
+  File "/home/ionlab/nsOran/.waf3-2.0.21-c6c9a875365426e5928462b9b74d40b5/waflib/Configure.py", line 335, in run_build
     bld.compile()
-  File "/home/boo/ns_sinr_orn/.waf3-2.0.21-c6c9a875365426e5928462b9b74d40b5/waflib/Build.py", line 176, in compile
+  File "/home/ionlab/nsOran/.waf3-2.0.21-c6c9a875365426e5928462b9b74d40b5/waflib/Build.py", line 176, in compile
     raise Errors.BuildError(self.producer.error)
 waflib.Errors.BuildError: Build failed
  -> task in 'testprog' failed with exit status 1 (run with -v to display more information)
 
 not found
-from /home/boo/ns_sinr_orn/src/core: The configuration failed
+from /home/ionlab/nsOran/src/core: The configuration failed
 --------------------------------------------------------------------------
 Checking for library rt
 ==>
@@ -1573,10 +1573,10 @@ int main(int argc, char **argv) {
 <==
 [1/2] Compiling [32mbuild/.conf_check_2b334598ad55df9c966dac32c87d3c5d/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-pthread', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_2b334598ad55df9c966dac32c87d3c5d/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-pthread', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o/home/ionlab/nsOran/build/.conf_check_2b334598ad55df9c966dac32c87d3c5d/testbuild/test.cpp.1.o']
 [2/2] Linking [33mbuild/.conf_check_2b334598ad55df9c966dac32c87d3c5d/testbuild/testprog[0m
 
-['/usr/bin/g++', '-pthread', 'test.cpp.1.o', '-o/home/boo/ns_sinr_orn/build/.conf_check_2b334598ad55df9c966dac32c87d3c5d/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lrt']
+['/usr/bin/g++', '-pthread', 'test.cpp.1.o', '-o/home/ionlab/nsOran/build/.conf_check_2b334598ad55df9c966dac32c87d3c5d/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lrt']
 yes
 --------------------------------------------------------------------------
 Checking for header boost/units/systems/si.hpp
@@ -1592,10 +1592,10 @@ int main ()
 <==
 [1/2] Compiling [32mbuild/.conf_check_d3c5e6c589c9841223869d7de01349d0/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-I/usr/include', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_RT=1', '../test.cpp', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_d3c5e6c589c9841223869d7de01349d0/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-I/usr/include', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_RT=1', '../test.cpp', '-c', '-o/home/ionlab/nsOran/build/.conf_check_d3c5e6c589c9841223869d7de01349d0/testbuild/test.cpp.1.o']
 [2/2] Linking [33mbuild/.conf_check_d3c5e6c589c9841223869d7de01349d0/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/home/boo/ns_sinr_orn/build/.conf_check_d3c5e6c589c9841223869d7de01349d0/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/ionlab/nsOran/build/.conf_check_d3c5e6c589c9841223869d7de01349d0/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 --------------------------------------------------------------------------
 Checking for header sys/ioctl.h
@@ -1610,10 +1610,10 @@ int main(int argc, char **argv) {
 <==
 [1/2] Compiling [32mbuild/.conf_check_72d93051ebaa6b5f9d463e7096461b0c/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_72d93051ebaa6b5f9d463e7096461b0c/testbuild/test.cpp.1.o', '-DHAVE_BOOST_UNITS']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o/home/ionlab/nsOran/build/.conf_check_72d93051ebaa6b5f9d463e7096461b0c/testbuild/test.cpp.1.o', '-DHAVE_BOOST_UNITS']
 [2/2] Linking [33mbuild/.conf_check_72d93051ebaa6b5f9d463e7096461b0c/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/home/boo/ns_sinr_orn/build/.conf_check_72d93051ebaa6b5f9d463e7096461b0c/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/ionlab/nsOran/build/.conf_check_72d93051ebaa6b5f9d463e7096461b0c/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 --------------------------------------------------------------------------
 Checking for header net/if.h
@@ -1628,10 +1628,10 @@ int main(int argc, char **argv) {
 <==
 [1/2] Compiling [32mbuild/.conf_check_10ae9c9b4244c33b19dacb103f33468c/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '../test.cpp', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_10ae9c9b4244c33b19dacb103f33468c/testbuild/test.cpp.1.o', '-DHAVE_BOOST_UNITS']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '../test.cpp', '-c', '-o/home/ionlab/nsOran/build/.conf_check_10ae9c9b4244c33b19dacb103f33468c/testbuild/test.cpp.1.o', '-DHAVE_BOOST_UNITS']
 [2/2] Linking [33mbuild/.conf_check_10ae9c9b4244c33b19dacb103f33468c/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/home/boo/ns_sinr_orn/build/.conf_check_10ae9c9b4244c33b19dacb103f33468c/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/ionlab/nsOran/build/.conf_check_10ae9c9b4244c33b19dacb103f33468c/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 --------------------------------------------------------------------------
 Checking for header net/ethernet.h
@@ -1646,16 +1646,16 @@ int main(int argc, char **argv) {
 <==
 [1/2] Compiling [32mbuild/.conf_check_02eff9a880d4ef695f1f39407f17941c/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '../test.cpp', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_02eff9a880d4ef695f1f39407f17941c/testbuild/test.cpp.1.o', '-DHAVE_BOOST_UNITS']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '../test.cpp', '-c', '-o/home/ionlab/nsOran/build/.conf_check_02eff9a880d4ef695f1f39407f17941c/testbuild/test.cpp.1.o', '-DHAVE_BOOST_UNITS']
 [2/2] Linking [33mbuild/.conf_check_02eff9a880d4ef695f1f39407f17941c/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/home/boo/ns_sinr_orn/build/.conf_check_02eff9a880d4ef695f1f39407f17941c/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/ionlab/nsOran/build/.conf_check_02eff9a880d4ef695f1f39407f17941c/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 --------------------------------------------------------------------------
 Checking for program 'pkg-config'
 not found
 find program=['pkg-config'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/snap/bin'] var='PKGCONFIG' -> None
-from /home/boo/ns_sinr_orn/src/fd-net-device: Could not find the program ['pkg-config']
+from /home/ionlab/nsOran/src/fd-net-device: Could not find the program ['pkg-config']
 --------------------------------------------------------------------------
 Checking for header linux/if_tun.h
 ==>
@@ -1669,10 +1669,10 @@ int main(int argc, char **argv) {
 <==
 [1/2] Compiling [32mbuild/.conf_check_84bde5bf7ffe777dad5df813b93837c2/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '../test.cpp', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_84bde5bf7ffe777dad5df813b93837c2/testbuild/test.cpp.1.o', '-DHAVE_BOOST_UNITS']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '../test.cpp', '-c', '-o/home/ionlab/nsOran/build/.conf_check_84bde5bf7ffe777dad5df813b93837c2/testbuild/test.cpp.1.o', '-DHAVE_BOOST_UNITS']
 [2/2] Linking [33mbuild/.conf_check_84bde5bf7ffe777dad5df813b93837c2/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/home/boo/ns_sinr_orn/build/.conf_check_84bde5bf7ffe777dad5df813b93837c2/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/ionlab/nsOran/build/.conf_check_84bde5bf7ffe777dad5df813b93837c2/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 --------------------------------------------------------------------------
 Checking for header netpacket/packet.h
@@ -1687,10 +1687,10 @@ int main(int argc, char **argv) {
 <==
 [1/2] Compiling [32mbuild/.conf_check_b65f599c2de3a80c907eb8b7100968be/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_IF_TUN_H=1', '../test.cpp', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_b65f599c2de3a80c907eb8b7100968be/testbuild/test.cpp.1.o', '-DHAVE_BOOST_UNITS']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_IF_TUN_H=1', '../test.cpp', '-c', '-o/home/ionlab/nsOran/build/.conf_check_b65f599c2de3a80c907eb8b7100968be/testbuild/test.cpp.1.o', '-DHAVE_BOOST_UNITS']
 [2/2] Linking [33mbuild/.conf_check_b65f599c2de3a80c907eb8b7100968be/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/home/boo/ns_sinr_orn/build/.conf_check_b65f599c2de3a80c907eb8b7100968be/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/ionlab/nsOran/build/.conf_check_b65f599c2de3a80c907eb8b7100968be/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 --------------------------------------------------------------------------
 Checking for header net/netmap_user.h
@@ -1705,22 +1705,22 @@ int main(int argc, char **argv) {
 <==
 [1/2] Compiling [32mbuild/.conf_check_e9d03684062581acb00eba710bb5272f/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_IF_TUN_H=1', '-DHAVE_PACKET_H=1', '../test.cpp', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_e9d03684062581acb00eba710bb5272f/testbuild/test.cpp.1.o', '-DHAVE_BOOST_UNITS']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_IF_TUN_H=1', '-DHAVE_PACKET_H=1', '../test.cpp', '-c', '-o/home/ionlab/nsOran/build/.conf_check_e9d03684062581acb00eba710bb5272f/testbuild/test.cpp.1.o', '-DHAVE_BOOST_UNITS']
 err: ../test.cpp:1:10: fatal error: net/netmap_user.h: No such file or directory
     1 | #include <net/netmap_user.h>
       |          ^~~~~~~~~~~~~~~~~~~
 compilation terminated.
 
-from /home/boo/ns_sinr_orn/src/fd-net-device: Test does not build: Traceback (most recent call last):
-  File "/home/boo/ns_sinr_orn/.waf3-2.0.21-c6c9a875365426e5928462b9b74d40b5/waflib/Configure.py", line 335, in run_build
+from /home/ionlab/nsOran/src/fd-net-device: Test does not build: Traceback (most recent call last):
+  File "/home/ionlab/nsOran/.waf3-2.0.21-c6c9a875365426e5928462b9b74d40b5/waflib/Configure.py", line 335, in run_build
     bld.compile()
-  File "/home/boo/ns_sinr_orn/.waf3-2.0.21-c6c9a875365426e5928462b9b74d40b5/waflib/Build.py", line 176, in compile
+  File "/home/ionlab/nsOran/.waf3-2.0.21-c6c9a875365426e5928462b9b74d40b5/waflib/Build.py", line 176, in compile
     raise Errors.BuildError(self.producer.error)
 waflib.Errors.BuildError: Build failed
  -> task in 'testprog' failed with exit status 1 (run with -v to display more information)
 
 not found
-from /home/boo/ns_sinr_orn/src/fd-net-device: The configuration failed
+from /home/ionlab/nsOran/src/fd-net-device: The configuration failed
 --------------------------------------------------------------------------
 Checking for NSC location
 not found
@@ -1728,7 +1728,7 @@ not found
 Checking for program 'pkg-config'
 not found
 find program=['pkg-config'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/snap/bin'] var='PKGCONFIG' -> None
-from /home/boo/ns_sinr_orn/src/stats: Could not find the program ['pkg-config']
+from /home/ionlab/nsOran/src/stats: Could not find the program ['pkg-config']
 --------------------------------------------------------------------------
 Checking for header semaphore.h
 ==>
@@ -1742,10 +1742,10 @@ int main(int argc, char **argv) {
 <==
 [1/2] Compiling [32mbuild/.conf_check_c37efbb515ef25356eb075829fe2daf9/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_IF_TUN_H=1', '-DHAVE_PACKET_H=1', '../test.cpp', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_c37efbb515ef25356eb075829fe2daf9/testbuild/test.cpp.1.o', '-DHAVE_BOOST_UNITS']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_IF_TUN_H=1', '-DHAVE_PACKET_H=1', '../test.cpp', '-c', '-o/home/ionlab/nsOran/build/.conf_check_c37efbb515ef25356eb075829fe2daf9/testbuild/test.cpp.1.o', '-DHAVE_BOOST_UNITS']
 [2/2] Linking [33mbuild/.conf_check_c37efbb515ef25356eb075829fe2daf9/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/home/boo/ns_sinr_orn/build/.conf_check_c37efbb515ef25356eb075829fe2daf9/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/ionlab/nsOran/build/.conf_check_c37efbb515ef25356eb075829fe2daf9/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 --------------------------------------------------------------------------
 Checking for header linux/if_tun.h
@@ -1760,10 +1760,10 @@ int main(int argc, char **argv) {
 <==
 [1/2] Compiling [32mbuild/.conf_check_84bde5bf7ffe777dad5df813b93837c2/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_SEMAPHORE_H=1', '../test.cpp', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_84bde5bf7ffe777dad5df813b93837c2/testbuild/test.cpp.1.o', '-DHAVE_BOOST_UNITS']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_SEMAPHORE_H=1', '../test.cpp', '-c', '-o/home/ionlab/nsOran/build/.conf_check_84bde5bf7ffe777dad5df813b93837c2/testbuild/test.cpp.1.o', '-DHAVE_BOOST_UNITS']
 [2/2] Linking [33mbuild/.conf_check_84bde5bf7ffe777dad5df813b93837c2/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/home/boo/ns_sinr_orn/build/.conf_check_84bde5bf7ffe777dad5df813b93837c2/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/ionlab/nsOran/build/.conf_check_84bde5bf7ffe777dad5df813b93837c2/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 --------------------------------------------------------------------------
 Found contrib module
@@ -1776,17 +1776,17 @@ find program=['sudo'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '
 Checking for program 'valgrind'
 not found
 find program=['valgrind'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/snap/bin'] var='VALGRIND' -> None
-from /home/boo/ns_sinr_orn: Could not find the program ['valgrind']
+from /home/ionlab/nsOran: Could not find the program ['valgrind']
 --------------------------------------------------------------------------
 Checking for program 'pkg-config'
 not found
 find program=['pkg-config'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/snap/bin'] var='PKGCONFIG' -> None
-from /home/boo/ns_sinr_orn: Could not find the program ['pkg-config']
+from /home/ionlab/nsOran: Could not find the program ['pkg-config']
 --------------------------------------------------------------------------
 libgcrypt-config
 not found
 find program=['libgcrypt-config'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/snap/bin'] var='LIBGCRYPT_CONFIG' -> None
-from /home/boo/ns_sinr_orn: Could not find the program ['libgcrypt-config']
+from /home/ionlab/nsOran: Could not find the program ['libgcrypt-config']
 --------------------------------------------------------------------------
 Checking for compilation flag -fstrict-aliasing support
 ==>
@@ -1794,7 +1794,7 @@ int main() { return 0; }
 <==
 [1/1] Compiling [32mbuild/.conf_check_040c0dd0eda912b8b29d7d1ce92ad6d6/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-I/usr/local/include/e2sim', '-fstrict-aliasing', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_SEMAPHORE_H=1', '-DHAVE_IF_TUN_H=1', '../test.cpp', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_040c0dd0eda912b8b29d7d1ce92ad6d6/testbuild/test.cpp.1.o', '-DHAVE_BOOST_UNITS']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-I/usr/local/include/e2sim', '-fstrict-aliasing', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_SEMAPHORE_H=1', '-DHAVE_IF_TUN_H=1', '../test.cpp', '-c', '-o/home/ionlab/nsOran/build/.conf_check_040c0dd0eda912b8b29d7d1ce92ad6d6/testbuild/test.cpp.1.o', '-DHAVE_BOOST_UNITS']
 ok
 --------------------------------------------------------------------------
 Checking for compilation flag -fstrict-aliasing support
@@ -1803,7 +1803,7 @@ int main() { return 0; }
 <==
 [1/1] Compiling [32mbuild/.conf_check_bbeb304d122cb8cef475215642c54663/test.c[0m
 
-['/usr/bin/gcc', '-fstrict-aliasing', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_SEMAPHORE_H=1', '-DHAVE_IF_TUN_H=1', '../test.c', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_bbeb304d122cb8cef475215642c54663/testbuild/test.c.1.o', '-DHAVE_BOOST_UNITS']
+['/usr/bin/gcc', '-fstrict-aliasing', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_SEMAPHORE_H=1', '-DHAVE_IF_TUN_H=1', '../test.c', '-c', '-o/home/ionlab/nsOran/build/.conf_check_bbeb304d122cb8cef475215642c54663/testbuild/test.c.1.o', '-DHAVE_BOOST_UNITS']
 ok
 --------------------------------------------------------------------------
 Checking for compilation flag -Wstrict-aliasing support
@@ -1812,7 +1812,7 @@ int main() { return 0; }
 <==
 [1/1] Compiling [32mbuild/.conf_check_040c0dd0eda912b8b29d7d1ce92ad6d6/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-I/usr/local/include/e2sim', '-fstrict-aliasing', '-Wstrict-aliasing', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_SEMAPHORE_H=1', '-DHAVE_IF_TUN_H=1', '../test.cpp', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_040c0dd0eda912b8b29d7d1ce92ad6d6/testbuild/test.cpp.1.o', '-DHAVE_BOOST_UNITS']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-I/usr/local/include/e2sim', '-fstrict-aliasing', '-Wstrict-aliasing', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_SEMAPHORE_H=1', '-DHAVE_IF_TUN_H=1', '../test.cpp', '-c', '-o/home/ionlab/nsOran/build/.conf_check_040c0dd0eda912b8b29d7d1ce92ad6d6/testbuild/test.cpp.1.o', '-DHAVE_BOOST_UNITS']
 ok
 --------------------------------------------------------------------------
 Checking for compilation flag -Wstrict-aliasing support
@@ -1821,10 +1821,10 @@ int main() { return 0; }
 <==
 [1/1] Compiling [32mbuild/.conf_check_bbeb304d122cb8cef475215642c54663/test.c[0m
 
-['/usr/bin/gcc', '-Wstrict-aliasing', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_SEMAPHORE_H=1', '-DHAVE_IF_TUN_H=1', '../test.c', '-c', '-o/home/boo/ns_sinr_orn/build/.conf_check_bbeb304d122cb8cef475215642c54663/testbuild/test.c.1.o', '-DHAVE_BOOST_UNITS']
+['/usr/bin/gcc', '-Wstrict-aliasing', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_SEMAPHORE_H=1', '-DHAVE_IF_TUN_H=1', '../test.c', '-c', '-o/home/ionlab/nsOran/build/.conf_check_bbeb304d122cb8cef475215642c54663/testbuild/test.c.1.o', '-DHAVE_BOOST_UNITS']
 ok
 --------------------------------------------------------------------------
 Checking for program 'doxygen'
 not found
 find program=['doxygen'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/snap/bin'] var='DOXYGEN' -> None
-from /home/boo/ns_sinr_orn: Could not find the program ['doxygen']
+from /home/ionlab/nsOran: Could not find the program ['doxygen']

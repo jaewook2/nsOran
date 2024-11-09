@@ -2945,11 +2945,11 @@ MmWaveHelper::SetUeComponentCarrierManagerType (std::string type)
 uint64_t
 MmWaveHelper::GetStartTime ()
 {
-  //struct timeval time_now{};
-  // gettimeofday (&time_now, nullptr);
+  struct timeval time_now{};
+  gettimeofday (&time_now, nullptr);
  
-  //return (time_now.tv_sec * 1000) + (time_now.tv_usec / 1000);
-  return 0;
+  return (time_now.tv_sec * 1000) + (time_now.tv_usec / 1000);
+  //return 0;
 
 }
 }

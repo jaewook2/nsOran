@@ -59,7 +59,7 @@ PrintGnuplottableUeListToFile (std::string filename)
           if (mcuedev)
             {
               Vector pos = node->GetObject<MobilityModel> ()->GetPosition ();
-              outFile << mcuedev->GetImsi () << " " << pos.x << "," << pos.y
+              outFile << mcuedev->GetImsi () << "," << pos.x << "," << pos.y
                       << std::endl;
             }
         }
@@ -185,8 +185,8 @@ SetPossitionfromfile (std::string filename)
 
     double x = numbers[0];
     double y = numbers[1];
-
     uePositionAlloc->Add (Vector (x, y, 2));
+    printf("x: %f, y: %f \n", x, y);
   }
   outFile.close(); 
  
@@ -259,7 +259,7 @@ static ns3::GlobalValue g_e2TermIp ("e2TermIp", "The IP address of the RIC E2 te
 static ns3::GlobalValue
     g_enableE2FileLogging ("enableE2FileLogging",
                            "If true, generate offline file logging instead of connecting to RIC",
-                           ns3::BooleanValue (true), ns3::MakeBooleanChecker ());
+                           ns3::BooleanValue (false), ns3::MakeBooleanChecker ());
 
 static ns3::GlobalValue g_controlFileName ("controlFileName",
                                            "The path to the control file (can be absolute)",
@@ -292,6 +292,7 @@ main (int argc, char *argv[])
   uint8_t bs3 = 1;
   uint8_t bs4 = 1;
   bool stopMove = false;
+  uint8_t nUeNodes = 12;
   
   // Command line arguments
   CommandLine cmd;
@@ -302,6 +303,8 @@ main (int argc, char *argv[])
   cmd.AddValue("bs3", "BS3 ON/OFF State", bs3);
   cmd.AddValue("bs4", "BS4 ON/OFF State", bs4);
   cmd.AddValue("maxXAxis", "max values", maxXAxis);
+  cmd.AddValue("nUeNodes", "number of ues", nUeNodes);
+
   cmd.Parse (argc, argv);
 
   uint8_t bsState[4] = {bs1, bs2,bs3,bs4} ;
@@ -483,11 +486,11 @@ main (int argc, char *argv[])
   Ptr<MmWavePointToPointEpcHelper> epcHelper = CreateObject<MmWavePointToPointEpcHelper> ();
   mmwaveHelper->SetEpcHelper (epcHelper);
   // Todo 0513 pattern에 따라서 변경.
-  uint8_t nMmWaveEnbNodes =4;
+//  uint8_t nMmWaveEnbNodes =4;
   uint8_t nMmWaveEnbNodes_test = bs1+bs2+bs3+bs4;
   uint8_t nLteEnbNodes = 1;
-  uint32_t ues = 3;
-  uint8_t nUeNodes = ues* nMmWaveEnbNodes;
+  //uint32_t ues = 3;
+  //uint8_t nUeNodes = ues* nMmWaveEnbNodes;
 
   NS_LOG_INFO (" Bandwidth " << bandwidth << " centerFrequency " << double (centerFrequency)
                              << " isd " << isd << " numAntennasMcUe " << numAntennasMcUe

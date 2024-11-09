@@ -1,6 +1,7 @@
 #!/bin/bash
 #set -x
 
+
 enableTraces=1 # enable generation of ns-3 traces 
 e2lteEnabled=1 # enable e2 reports from lte macro cell
 e2nrEnabled=1 # enable e2 reports from nr secondary cells

@@ -167,6 +167,7 @@ private:
   std::string m_cuCpFileName;
   std::string m_duFileName;
   std::string m_TracePath;
+  bool m_send3gppSINR;
 
 
 };

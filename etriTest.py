@@ -8,13 +8,17 @@ import shutil
 i_sim = 0
 def createPoss(nUes, maxX, maxY, path_file = None):
   possList = np.zeros((nUes,2)) # (x,y point)
-  possIndList = np.random.choice (range(0,(maxX+1)*(maxY+1)), nUes, replace = False)
+  #possIndList = np.random.choice (range(0,(maxX+1)*(maxY+1)), nUes, replace = False)
+  possList[0,0] = 323 
+  possList[0,1] = 18
+  possList[1,0] = 112
+  possList[1,1] = 310
   # 수정 필요
   if path_file != None:
     f = open(path_file,'w')
   
   for i in range (nUes):
-    possList[i,0], possList[i,1] = possIndList[i]%maxY, possIndList[i]//maxY
+    #possList[i,0], possList[i,1] = possIndList[i]%maxY, possIndList[i]//maxY
     if path_file != None:
     	f.write("%d %d\n"% (possList[i,0], possList[i,1]))
 
@@ -44,7 +48,7 @@ basePathName = rootName
 # create_folder
 #createFolder(basePathName) 
 # create random possition within (max_X, max_Y) and save ue poss to file
-#possList = createPoss(nUes, maxX, maxY, path_file = basePathName+'/ues_poss.txt')
+possList = createPoss(nUes, maxX, maxY, path_file = basePathName+'/ues_poss.txt')
 #np.save('possition',possList)
 
 # possList= np.load('possition.npy')

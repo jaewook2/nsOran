@@ -179,6 +179,11 @@ TypeId MmWaveEnbNetDevice::GetTypeId ()
                    StringValue(""),
                    MakeStringAccessor (&MmWaveEnbNetDevice::m_TracePath),
                    MakeStringChecker())
+    .AddAttribute ("Enable3G[[SINRReport",
+                   "If true, send CuUpReport",
+                   BooleanValue (false),
+                   MakeBooleanAccessor (&MmWaveEnbNetDevice::m_send3gppSINR),
+                   MakeBooleanChecker ())
   ;
   return tid;
 }
@@ -195,7 +200,8 @@ MmWaveEnbNetDevice::MmWaveEnbNetDevice ()
     m_cuUpFileName (),
     m_cuCpFileName (),
     m_duFileName (),
-    m_TracePath()
+    m_TracePath(),
+    m_send3gppSINR()
 {
   NS_LOG_FUNCTION (this);
 }
@@ -753,8 +759,14 @@ MmWaveEnbNetDevice::BuildRicIndicationMessageCuCp(std::string plmId)
     Ptr<L3RrcMeasurements> l3RrcMeasurementServing;
     if (!indicationMessageHelper->IsOffline ())
       {
-        l3RrcMeasurementServing =
-            L3RrcMeasurements::CreateL3RrcUeSpecificSinrServing (m_cellId, m_cellId, convertedSinr);
+        // To change
+        if (m_send3gppSINR){
+          l3RrcMeasurementServing =
+              L3RrcMeasurements::CreateL3RrcUeSpecificSinrServing (m_cellId, m_cellId, convertedSinr);
+        } else {
+          l3RrcMeasurementServing =
+              L3RrcMeasurements::CreateL3RrcUeSpecificSinrServing (m_cellId, m_cellId, sinrThisCell);        
+        }
       }
     NS_LOG_DEBUG (Simulator::Now ().GetSeconds ()
                   << " enbdev " << m_cellId << " UE " << imsi << " L3 serving SINR " << sinrThisCell
@@ -795,10 +807,14 @@ MmWaveEnbNetDevice::BuildRicIndicationMessageCuCp(std::string plmId)
           {
             sinr = 10 * std::log10 (it->first); // now SINR is a key due to the sort of the map
             convertedSinr = L3RrcMeasurements::ThreeGppMapSinr (sinr);
-            if (!indicationMessageHelper->IsOffline ())
-              {
-                l3RrcMeasurementNeigh->AddNeighbourCellMeasurement (cellId, convertedSinr);
-              }
+            if (!indicationMessageHelper->IsOffline ()) {
+              if (m_send3gppSINR)
+                {
+                  l3RrcMeasurementNeigh->AddNeighbourCellMeasurement (cellId, convertedSinr);
+                } else {
+                  l3RrcMeasurementNeigh->AddNeighbourCellMeasurement (cellId, sinr);
+                }
+            }
             NS_LOG_DEBUG (Simulator::Now ().GetSeconds ()
                           << " enbdev " << m_cellId << " UE " << imsi << " L3 neigh " << cellId
                           << " SINR " << sinr << " sinr encoded " << convertedSinr

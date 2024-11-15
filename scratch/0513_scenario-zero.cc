@@ -259,7 +259,7 @@ static ns3::GlobalValue g_e2TermIp ("e2TermIp", "The IP address of the RIC E2 te
 static ns3::GlobalValue
     g_enableE2FileLogging ("enableE2FileLogging",
                            "If true, generate offline file logging instead of connecting to RIC",
-                           ns3::BooleanValue (false), ns3::MakeBooleanChecker ());
+                           ns3::BooleanValue (true), ns3::MakeBooleanChecker ());
 
 static ns3::GlobalValue g_controlFileName ("controlFileName",
                                            "The path to the control file (can be absolute)",

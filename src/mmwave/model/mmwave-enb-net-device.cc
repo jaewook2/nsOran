@@ -179,10 +179,16 @@ TypeId MmWaveEnbNetDevice::GetTypeId ()
                    StringValue(""),
                    MakeStringAccessor (&MmWaveEnbNetDevice::m_TracePath),
                    MakeStringChecker())
-    .AddAttribute ("Enable3G[[SINRReport",
+    .AddAttribute ("Enable3GPPSINRReport",
                    "If true, send CuUpReport",
                    BooleanValue (false),
                    MakeBooleanAccessor (&MmWaveEnbNetDevice::m_send3gppSINR),
+                   MakeBooleanChecker ())
+
+    .AddAttribute ("EnableE2MsgReporting",
+                   "If true, force E2 indication generation and write E2 fields in csv file",
+                   BooleanValue (false),
+                   MakeBooleanAccessor (&MmWaveEnbNetDevice::m_forceE2MsgReporting),
                    MakeBooleanChecker ())
   ;
   return tid;
@@ -197,6 +203,7 @@ MmWaveEnbNetDevice::MmWaveEnbNetDevice ()
     m_isReportingEnabled (false),
     m_reducedPmValues (false),
     m_forceE2FileLogging (false),
+    m_forceE2MsgReporting(true),
     m_cuUpFileName (),
     m_cuCpFileName (),
     m_duFileName (),
@@ -406,10 +413,8 @@ MmWaveEnbNetDevice::UpdateConfig (void)
               NS_LOG_DEBUG("E2sim start in cell " << m_cellId 
                 << " force CSV logging " << m_forceE2FileLogging);              
 
-              if(!m_forceE2FileLogging) {
-                Simulator::Schedule (MicroSeconds (0), &E2Termination::Start, m_e2term);
-              }
-              else {
+
+              if (m_forceE2FileLogging) {
                 m_cuUpFileName = m_TracePath + "cu-up-cell-" + std::to_string(m_cellId) + ".txt";
                 std::ofstream csv {};
                 csv.open (m_cuUpFileName.c_str ());
@@ -473,6 +478,11 @@ MmWaveEnbNetDevice::UpdateConfig (void)
 
                 csv << header_csv + "," + cell_header + "," + ue_header + "\n";
                 csv.close();
+              }
+              
+              if(m_forceE2MsgReporting) {
+                Simulator::Schedule (MicroSeconds (0), &E2Termination::Start, m_e2term);
+              } else if (m_forceE2FileLogging) {
                 Simulator::Schedule(MicroSeconds(500), &MmWaveEnbNetDevice::BuildAndSendReportMessage, this, E2Termination::RicSubscriptionRequest_rval_s{});
               }
 
@@ -511,7 +521,7 @@ MmWaveEnbNetDevice::SetE2Termination(Ptr<E2Termination> e2term)
 
   NS_LOG_DEBUG("Register E2SM");
 
-  if (!m_forceE2FileLogging)
+  if (m_forceE2MsgReporting)
     {
       Ptr<KpmFunctionDescription> kpmFd = Create<KpmFunctionDescription> ();
       e2term->RegisterKpmCallbackToE2Sm (
@@ -544,7 +554,7 @@ Ptr<KpmIndicationHeader>
 MmWaveEnbNetDevice::BuildRicIndicationHeader (std::string plmId, std::string gnbId,
                                               uint16_t nrCellId)
 {
-  if (!m_forceE2FileLogging)
+  if (m_forceE2MsgReporting)
     {
       KpmIndicationHeader::KpmRicIndicationHeaderValues headerValues;
       headerValues.m_plmId = plmId;
@@ -572,7 +582,7 @@ MmWaveEnbNetDevice::BuildRicIndicationMessageCuUp(std::string plmId)
 {
   Ptr<MmWaveIndicationMessageHelper> indicationMessageHelper =
       Create<MmWaveIndicationMessageHelper> (IndicationMessageHelper::IndicationMessageType::CuUp,
-                                             m_forceE2FileLogging, m_reducedPmValues);
+                                             !m_forceE2MsgReporting, m_reducedPmValues);
 
   // get <rnti, UeManager> map of connected UEs
   auto ueMap = m_rrc->GetUeMap();
@@ -700,12 +710,15 @@ MmWaveEnbNetDevice::BuildRicIndicationMessageCuUp(std::string plmId)
           csv << to_print;
         }
       csv.close ();
-      return nullptr;
     }
-  else
-    {
-      return indicationMessageHelper->CreateIndicationMessage ();
-    }
+  
+  if (m_forceE2MsgReporting){
+    return indicationMessageHelper->CreateIndicationMessage ();
+  } else if (m_forceE2FileLogging ) {
+    return nullptr;
+  } else {
+    return nullptr;
+  }
 }
 
 template <typename A, typename B>
@@ -729,7 +742,7 @@ MmWaveEnbNetDevice::BuildRicIndicationMessageCuCp(std::string plmId)
 {
   Ptr<MmWaveIndicationMessageHelper> indicationMessageHelper =
       Create<MmWaveIndicationMessageHelper> (IndicationMessageHelper::IndicationMessageType::CuCp,
-                                             m_forceE2FileLogging, m_reducedPmValues);
+                                             !m_forceE2MsgReporting, m_reducedPmValues);
 
   auto ueMap = m_rrc->GetUeMap();
 
@@ -875,12 +888,16 @@ MmWaveEnbNetDevice::BuildRicIndicationMessageCuCp(std::string plmId)
           csv << to_print;
         }
       csv.close ();
-      return nullptr;
     }
-  else
-    {
-      return indicationMessageHelper->CreateIndicationMessage ();
-    }
+  if (m_forceE2MsgReporting) {
+    return indicationMessageHelper->CreateIndicationMessage ();
+  }
+  else if (m_forceE2FileLogging)
+  {
+    return nullptr;
+  } else {
+    return nullptr;
+  }
 }
 
 
@@ -911,7 +928,7 @@ MmWaveEnbNetDevice::BuildRicIndicationMessageDu(std::string plmId, uint16_t nrCe
 {
   Ptr<MmWaveIndicationMessageHelper> indicationMessageHelper =
       Create<MmWaveIndicationMessageHelper> (IndicationMessageHelper::IndicationMessageType::Du,
-                                             m_forceE2FileLogging, m_reducedPmValues);
+                                             !m_forceE2MsgReporting, m_reducedPmValues);
   
   auto ueMap = m_rrc->GetUeMap();
 
@@ -1260,12 +1277,15 @@ MmWaveEnbNetDevice::BuildRicIndicationMessageDu(std::string plmId, uint16_t nrCe
     }
     csv.close ();
     
+    
+    }
+  if (m_forceE2MsgReporting){
+     return indicationMessageHelper->CreateIndicationMessage ();
+  } else if (m_forceE2FileLogging) {
+     return nullptr;
+  } else {
     return nullptr;
-    }
-  else
-    {
-      return indicationMessageHelper->CreateIndicationMessage ();
-    }
+  }
 }
 
 
@@ -1285,7 +1305,7 @@ MmWaveEnbNetDevice::BuildAndSendReportMessage(E2Termination::RicSubscriptionRequ
     Ptr<KpmIndicationMessage> cuUpMsg = BuildRicIndicationMessageCuUp(plmId);
 
     // Send CU-UP only if offline logging is disabled
-    if (!m_forceE2FileLogging && header != nullptr && cuUpMsg != nullptr)
+    if (m_forceE2MsgReporting && header != nullptr && cuUpMsg != nullptr)
     {
       NS_LOG_DEBUG ("Send NR CU-UP");
       E2AP_PDU *pdu_cuup_ue = new E2AP_PDU; 
@@ -1311,7 +1331,7 @@ MmWaveEnbNetDevice::BuildAndSendReportMessage(E2Termination::RicSubscriptionRequ
     Ptr<KpmIndicationMessage> cuCpMsg = BuildRicIndicationMessageCuCp(plmId);
 
     // Send CU-CP only if offline logging is disabled
-    if (!m_forceE2FileLogging && header != nullptr && cuCpMsg != nullptr)
+    if (m_forceE2MsgReporting && header != nullptr && cuCpMsg != nullptr)
     {
 
       NS_LOG_DEBUG ("Send NR CU-CP");
@@ -1338,7 +1358,7 @@ MmWaveEnbNetDevice::BuildAndSendReportMessage(E2Termination::RicSubscriptionRequ
     Ptr<KpmIndicationMessage> duMsg = BuildRicIndicationMessageDu(plmId, m_cellId);
 
     // Send DU only if offline logging is disabled
-    if (!m_forceE2FileLogging && header != nullptr && duMsg != nullptr)
+    if (m_forceE2MsgReporting && header != nullptr && duMsg != nullptr)
     {
 
       NS_LOG_DEBUG ("Send NR DU");
@@ -1358,10 +1378,10 @@ MmWaveEnbNetDevice::BuildAndSendReportMessage(E2Termination::RicSubscriptionRequ
     }
   }
   
-  if (!m_forceE2FileLogging)
+  if (m_forceE2MsgReporting)
     Simulator::ScheduleWithContext (1, Seconds (m_e2Periodicity),
                                     &MmWaveEnbNetDevice::BuildAndSendReportMessage, this, params);
-  else
+  else if (m_forceE2FileLogging)
     Simulator::Schedule (Seconds (m_e2Periodicity), &MmWaveEnbNetDevice::BuildAndSendReportMessage,
                          this, params);
 }

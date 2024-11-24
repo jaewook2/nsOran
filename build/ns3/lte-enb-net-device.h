@@ -290,6 +290,7 @@ private:
 
   bool m_reducedPmValues; //< if true use a reduced subset of pmvalues
   bool m_forceE2FileLogging; //< if true log PMs to files
+  bool m_forceE2MsgReporting; //< if true log PMs to files = add by jlee
 
   std::string m_cuUpFileName;
   std::string m_cuCpFileName;

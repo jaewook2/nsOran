@@ -7701,17 +7701,17 @@
   },
   {
     "directory": "/home/boo/nsOran/build",
-    "command": "/usr/bin/g++ -O0 -ggdb -g3 -Wall -Werror -std=c++11 -I/usr/local/include/e2sim -fstrict-aliasing -Wstrict-aliasing -pthread -I. -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_SEMAPHORE_H=1 -DHAVE_IF_TUN_H=1 ../scratch/scenario-one.cc -c -o/home/boo/nsOran/build/scratch/scenario-one.cc.8.o -DHAVE_BOOST_UNITS",
+    "command": "/usr/bin/g++ -O0 -ggdb -g3 -Wall -Werror -std=c++11 -I/usr/local/include/e2sim -fstrict-aliasing -Wstrict-aliasing -pthread -I. -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_SEMAPHORE_H=1 -DHAVE_IF_TUN_H=1 ../scratch/scenario-one.cc -c -o/home/boo/nsOran/build/scratch/scenario-one.cc.9.o -DHAVE_BOOST_UNITS",
     "file": "../scratch/scenario-one.cc"
   },
   {
     "directory": "/home/boo/nsOran/build",
-    "command": "/usr/bin/g++ -O0 -ggdb -g3 -Wall -Werror -std=c++11 -I/usr/local/include/e2sim -fstrict-aliasing -Wstrict-aliasing -pthread -I. -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_SEMAPHORE_H=1 -DHAVE_IF_TUN_H=1 ../scratch/scratch-simulator.cc -c -o/home/boo/nsOran/build/scratch/scratch-simulator.cc.12.o -DHAVE_BOOST_UNITS",
+    "command": "/usr/bin/g++ -O0 -ggdb -g3 -Wall -Werror -std=c++11 -I/usr/local/include/e2sim -fstrict-aliasing -Wstrict-aliasing -pthread -I. -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_SEMAPHORE_H=1 -DHAVE_IF_TUN_H=1 ../scratch/scratch-simulator.cc -c -o/home/boo/nsOran/build/scratch/scratch-simulator.cc.13.o -DHAVE_BOOST_UNITS",
     "file": "../scratch/scratch-simulator.cc"
   },
   {
     "directory": "/home/boo/nsOran/build",
-    "command": "/usr/bin/g++ -O0 -ggdb -g3 -Wall -Werror -std=c++11 -I/usr/local/include/e2sim -fstrict-aliasing -Wstrict-aliasing -pthread -I. -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_SEMAPHORE_H=1 -DHAVE_IF_TUN_H=1 ../scratch/scenario-zero.cc -c -o/home/boo/nsOran/build/scratch/scenario-zero.cc.13.o -DHAVE_BOOST_UNITS",
+    "command": "/usr/bin/g++ -O0 -ggdb -g3 -Wall -Werror -std=c++11 -I/usr/local/include/e2sim -fstrict-aliasing -Wstrict-aliasing -pthread -I. -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_SEMAPHORE_H=1 -DHAVE_IF_TUN_H=1 ../scratch/scenario-zero.cc -c -o/home/boo/nsOran/build/scratch/scenario-zero.cc.14.o -DHAVE_BOOST_UNITS",
     "file": "../scratch/scenario-zero.cc"
   },
   {
@@ -7796,7 +7796,7 @@
   },
   {
     "directory": "/home/boo/nsOran/build",
-    "command": "/usr/bin/g++ -O0 -ggdb -g3 -Wall -Werror -std=c++11 -I/usr/local/include/e2sim -fstrict-aliasing -Wstrict-aliasing -pthread -I. -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_SEMAPHORE_H=1 -DHAVE_IF_TUN_H=1 ../scratch/ORNA_Test.cc -c -o/home/boo/nsOran/build/scratch/ORNA_Test.cc.7.o -DHAVE_BOOST_UNITS",
+    "command": "/usr/bin/g++ -O0 -ggdb -g3 -Wall -Werror -std=c++11 -I/usr/local/include/e2sim -fstrict-aliasing -Wstrict-aliasing -pthread -I. -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_SEMAPHORE_H=1 -DHAVE_IF_TUN_H=1 ../scratch/ORNA_Test.cc -c -o/home/boo/nsOran/build/scratch/ORNA_Test.cc.8.o -DHAVE_BOOST_UNITS",
     "file": "../scratch/ORNA_Test.cc"
   },
   {
@@ -7811,12 +7811,12 @@
   },
   {
     "directory": "/home/boo/nsOran/build",
-    "command": "/usr/bin/g++ -O0 -ggdb -g3 -Wall -Werror -std=c++11 -I/usr/local/include/e2sim -fstrict-aliasing -Wstrict-aliasing -pthread -I. -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_SEMAPHORE_H=1 -DHAVE_IF_TUN_H=1 ../scratch/Test_Performance4000.cc -c -o/home/boo/nsOran/build/scratch/Test_Performance4000.cc.9.o -DHAVE_BOOST_UNITS",
+    "command": "/usr/bin/g++ -O0 -ggdb -g3 -Wall -Werror -std=c++11 -I/usr/local/include/e2sim -fstrict-aliasing -Wstrict-aliasing -pthread -I. -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_SEMAPHORE_H=1 -DHAVE_IF_TUN_H=1 ../scratch/Test_Performance4000.cc -c -o/home/boo/nsOran/build/scratch/Test_Performance4000.cc.10.o -DHAVE_BOOST_UNITS",
     "file": "../scratch/Test_Performance4000.cc"
   },
   {
     "directory": "/home/boo/nsOran/build",
-    "command": "/usr/bin/g++ -O0 -ggdb -g3 -Wall -Werror -std=c++11 -I/usr/local/include/e2sim -fstrict-aliasing -Wstrict-aliasing -pthread -I. -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_SEMAPHORE_H=1 -DHAVE_IF_TUN_H=1 ../scratch/Test_Performance10111.cc -c -o/home/boo/nsOran/build/scratch/Test_Performance10111.cc.10.o -DHAVE_BOOST_UNITS",
+    "command": "/usr/bin/g++ -O0 -ggdb -g3 -Wall -Werror -std=c++11 -I/usr/local/include/e2sim -fstrict-aliasing -Wstrict-aliasing -pthread -I. -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_SEMAPHORE_H=1 -DHAVE_IF_TUN_H=1 ../scratch/Test_Performance10111.cc -c -o/home/boo/nsOran/build/scratch/Test_Performance10111.cc.11.o -DHAVE_BOOST_UNITS",
     "file": "../scratch/Test_Performance10111.cc"
   },
   {
@@ -7826,12 +7826,17 @@
   },
   {
     "directory": "/home/boo/nsOran/build",
-    "command": "/usr/bin/g++ -O0 -ggdb -g3 -Wall -Werror -std=c++11 -I/usr/local/include/e2sim -fstrict-aliasing -Wstrict-aliasing -pthread -I. -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_SEMAPHORE_H=1 -DHAVE_IF_TUN_H=1 ../scratch/wireless-animation.cc -c -o/home/boo/nsOran/build/scratch/wireless-animation.cc.11.o -DHAVE_BOOST_UNITS",
+    "command": "/usr/bin/g++ -O0 -ggdb -g3 -Wall -Werror -std=c++11 -I/usr/local/include/e2sim -fstrict-aliasing -Wstrict-aliasing -pthread -I. -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_SEMAPHORE_H=1 -DHAVE_IF_TUN_H=1 ../scratch/wireless-animation.cc -c -o/home/boo/nsOran/build/scratch/wireless-animation.cc.12.o -DHAVE_BOOST_UNITS",
     "file": "../scratch/wireless-animation.cc"
   },
   {
     "directory": "/home/boo/nsOran/build",
     "command": "/usr/bin/g++ -O0 -ggdb -g3 -Wall -Werror -std=c++11 -I/usr/local/include/e2sim -fstrict-aliasing -Wstrict-aliasing -pthread -I. -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_SEMAPHORE_H=1 -DHAVE_IF_TUN_H=1 ../scratch/Test_Performance01111.cc -c -o/home/boo/nsOran/build/scratch/Test_Performance01111.cc.6.o -DHAVE_BOOST_UNITS",
     "file": "../scratch/Test_Performance01111.cc"
+  },
+  {
+    "directory": "/home/boo/nsOran/build",
+    "command": "/usr/bin/g++ -O0 -ggdb -g3 -Wall -Werror -std=c++11 -I/usr/local/include/e2sim -fstrict-aliasing -Wstrict-aliasing -pthread -I. -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_SEMAPHORE_H=1 -DHAVE_IF_TUN_H=1 ../scratch/different_freq.cc -c -o/home/boo/nsOran/build/scratch/different_freq.cc.7.o -DHAVE_BOOST_UNITS",
+    "file": "../scratch/different_freq.cc"
   }
 ]

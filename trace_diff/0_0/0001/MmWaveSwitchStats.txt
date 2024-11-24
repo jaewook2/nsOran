@@ -1,0 +1,12 @@
+SwitchToMmWave 0.0542144 1 2 1 
+SwitchToMmWave 0.0542145 2 2 2 
+SwitchToMmWave 0.0542146 3 2 3 
+SwitchToMmWave 0.0542147 4 2 4 
+SwitchToMmWave 0.0542148 5 2 5 
+SwitchToMmWave 0.0542149 7 2 7 
+SwitchToMmWave 0.054215 8 2 8 
+SwitchToMmWave 0.054215 9 2 9 
+SwitchToMmWave 0.0542151 11 2 11 
+SwitchToMmWave 0.0542152 12 2 12 
+SwitchToMmWave 0.0592144 6 2 6 
+SwitchToMmWave 0.0592145 10 2 10 

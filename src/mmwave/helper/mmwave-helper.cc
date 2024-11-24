@@ -283,6 +283,18 @@ MmWaveHelper::GetTypeId (void)
                    UintegerValue (38470),
                    MakeUintegerAccessor (&MmWaveHelper::m_e2localPort),
                    MakeUintegerChecker<uint16_t> ())
+    // add jlee
+    //.AddAttribute ("ReportRealTime",
+    //            "If true, enable realtime report.",
+    //            BooleanValue (false),
+    //            MakeBooleanAccessor (&MmWaveHelper::m_realTime),
+    //            MakeBooleanChecker ())
+
+    .AddAttribute ("ReportRealTime",
+                   "If true, enable reporting over E2 for LTE cells.",
+                   BooleanValue (true),
+                   MakeBooleanAccessor (&MmWaveHelper::m_realtime),
+                   MakeBooleanChecker ())
   ;
 
   return tid;
@@ -2943,13 +2955,18 @@ MmWaveHelper::SetUeComponentCarrierManagerType (std::string type)
 }
 
 uint64_t
-MmWaveHelper::GetStartTime ()
+MmWaveHelper::GetStartTime (void)
 {
-  //struct timeval time_now{};
-  //gettimeofday (&time_now, nullptr);
- 
-  //return (time_now.tv_sec * 1000) + (time_now.tv_usec / 1000);
-  return 0;
+  NS_LOG_UNCOND (" enableRelatimeReporting " << m_realtime);
+  if (m_realtime) {
+    printf("Realtime Report Enabled \n");
+    struct timeval time_now{};
+    gettimeofday (&time_now, nullptr);
+    return (time_now.tv_sec * 1000) + (time_now.tv_usec / 1000);
+  } else {
+    printf("Simtime Report Enabled \n");
+    return 0;
+  }
 
 }
 }

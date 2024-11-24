@@ -9,10 +9,10 @@ i_sim = 0
 def createPoss(nUes, maxX, maxY, path_file = None):
   possList = np.zeros((nUes,2)) # (x,y point)
   #possIndList = np.random.choice (range(0,(maxX+1)*(maxY+1)), nUes, replace = False)
-  possList[0,0] = 323 
-  possList[0,1] = 18
-  possList[1,0] = 112
-  possList[1,1] = 310
+  possList[0,0] = 55 
+  possList[0,1] = 26
+  possList[1,0] = 320
+  possList[1,1] = 324
   # 수정 필요
   if path_file != None:
     f = open(path_file,'w')

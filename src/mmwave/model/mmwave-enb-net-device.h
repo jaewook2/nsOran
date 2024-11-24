@@ -163,13 +163,13 @@ private:
   uint16_t m_basicCellId;
 
   bool m_forceE2FileLogging; //< if true log PMs to files
+  bool m_forceE2MsgReporting; //< if true log PMs to files = add by jlee
+
   std::string m_cuUpFileName;
   std::string m_cuCpFileName;
   std::string m_duFileName;
   std::string m_TracePath;
   bool m_send3gppSINR;
-
-
 };
 }
 }

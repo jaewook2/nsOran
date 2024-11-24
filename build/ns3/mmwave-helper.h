@@ -448,6 +448,7 @@ private:
   std::string m_e2ip;
   uint16_t m_e2port;
   uint16_t m_e2localPort;
+  bool m_realtime;
 
   /**
 * The `UseCa` attribute. If true, Carrier Aggregation is enabled in the MmWave

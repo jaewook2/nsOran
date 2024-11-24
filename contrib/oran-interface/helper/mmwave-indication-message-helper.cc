@@ -101,9 +101,9 @@ MmWaveIndicationMessageHelper::AddDuUePmItem (
       ueVal->AddItem<long> ("L1M.RS-SINR.Bin82.UEID", macSinrBin5);
       ueVal->AddItem<long> ("L1M.RS-SINR.Bin94.UEID", macSinrBin6);
       ueVal->AddItem<long> ("L1M.RS-SINR.Bin127.UEID", macSinrBin7);
-      ueVal->AddItem<long> ("DRB.BufferSize.Qos.UEID", rlcBufferOccup);
+     // ueVal->AddItem<long> ("DRB.BufferSize.Qos.UEID", rlcBufferOccup);
     }
-
+     ueVal->AddItem<long> ("DRB.BufferSize.Qos.UEID", rlcBufferOccup); // just for sim
   // This value is not requested anymore, so it has been removed from the delivery, but it will be still logged;
   // ueVal->AddItem<double> ("DRB.UEThpDlPdcpBased.UEID", drbThrDlPdcpBasedUeid);
   
@@ -153,9 +153,9 @@ MmWaveIndicationMessageHelper::AddDuCellPmItem (
       cellVal->AddItem<long> ("L1M.RS-SINR.Bin82", macSinrBin5CellSpecific);
       cellVal->AddItem<long> ("L1M.RS-SINR.Bin94", macSinrBin6CellSpecific);
       cellVal->AddItem<long> ("L1M.RS-SINR.Bin127", macSinrBin7CellSpecific);
-      cellVal->AddItem<long> ("DRB.BufferSize.Qos", rlcBufferOccupCellSpecific);
+      //cellVal->AddItem<long> ("DRB.BufferSize.Qos", rlcBufferOccupCellSpecific);
     }
-
+  cellVal->AddItem<long> ("DRB.BufferSize.Qos", rlcBufferOccupCellSpecific); // just for TEST
   cellVal->AddItem<long> ("DRB.MeanActiveUeDl",activeUeDl);
 
   m_msgValues.m_cellMeasurementItems = cellVal;

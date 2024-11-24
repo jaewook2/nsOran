@@ -35,9 +35,9 @@ maxX = 400
 maxY = maxX
 #enbP = [[20, 20], [40, 20], [10,37.3205], [10,2.67949]]
 rootName = 'trace/'
-i_num = 30 # 10 unit
+i_num = 10 # 10 unit
 
-nUes = 12
+nUes = 4
 # Do iteration
 for i in range (0, i_num):
   basePathName = rootName+str(i_sim)+'_'+str(i)

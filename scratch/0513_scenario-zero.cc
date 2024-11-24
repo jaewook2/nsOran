@@ -233,7 +233,7 @@ static ns3::GlobalValue
                              "E2 Indication Periodicity reports (value in seconds)",
                              ns3::DoubleValue (0.1), ns3::MakeDoubleChecker<double> (0.01, 2.0));
 
-static ns3::GlobalValue g_simTime ("simTime", "Simulation time in seconds", ns3::DoubleValue (5),
+static ns3::GlobalValue g_simTime ("simTime", "Simulation time in seconds", ns3::DoubleValue (20),
                                    ns3::MakeDoubleChecker<double> (0.1, 100.0));
 
 static ns3::GlobalValue g_outageThreshold ("outageThreshold",
@@ -256,16 +256,27 @@ static ns3::GlobalValue
 static ns3::GlobalValue g_e2TermIp ("e2TermIp", "The IP address of the RIC E2 termination",
                                     ns3::StringValue ("10.0.2.10"), ns3::MakeStringChecker ());
 
+
+//////
 static ns3::GlobalValue
     g_enableE2FileLogging ("enableE2FileLogging",
                            "If true, generate offline file logging instead of connecting to RIC",
                            ns3::BooleanValue (true), ns3::MakeBooleanChecker ());
 
+static ns3::GlobalValue
+    g_enableE2MsgReporting ("enableE2MsgReporting",
+                           "If true, generate offline file logging instead of connecting to RIC",
+                           ns3::BooleanValue (false), ns3::MakeBooleanChecker ());
+
 static ns3::GlobalValue g_controlFileName ("controlFileName",
                                            "The path to the control file (can be absolute)",
                                            ns3::StringValue (""),
                                            ns3::MakeStringChecker ());
+static ns3::GlobalValue g_reportRealTime ("reportRealTime", "If true, real time Report",
+                                       ns3::BooleanValue (true), ns3::MakeBooleanChecker ());
 
+static ns3::GlobalValue g_sinrReport ("enable3GPPSINRReport", "If true, send NR E2 reports",
+                                       ns3::BooleanValue (true), ns3::MakeBooleanChecker ());
 int
 main (int argc, char *argv[])
 {
@@ -365,12 +376,19 @@ main (int argc, char *argv[])
   std::string e2TermIp = stringValue.Get ();
   GlobalValue::GetValueByName ("enableE2FileLogging", booleanValue);
   bool enableE2FileLogging = booleanValue.Get ();
+  GlobalValue::GetValueByName ("enableE2MsgReporting", booleanValue);
+  bool enableE2MsgReporting = booleanValue.Get ();
   GlobalValue::GetValueByName ("numberOfRaPreambles", uintegerValue);
   uint8_t numberOfRaPreambles = uintegerValue.Get ();
 
+  GlobalValue::GetValueByName ("reportRealTime", booleanValue);
+  bool reportRealTime = booleanValue.Get ();
+
+
   NS_LOG_UNCOND ("bufferSize " << bufferSize << " OutageThreshold " << outageThreshold
                                << " HandoverMode " << handoverMode << " e2TermIp " << e2TermIp
-                               << " enableE2FileLogging " << enableE2FileLogging);
+                               << " enableE2FileLogging " << enableE2FileLogging << " enableE2MsgReporting " << enableE2MsgReporting
+                               << " enableRelatimeReporting " << reportRealTime);
 
   GlobalValue::GetValueByName ("e2lteEnabled", booleanValue);
   bool e2lteEnabled = booleanValue.Get ();
@@ -383,6 +401,10 @@ main (int argc, char *argv[])
   GlobalValue::GetValueByName ("e2cuCp", booleanValue);
   bool e2cuCp = booleanValue.Get ();
 
+
+ GlobalValue::GetValueByName ("enable3GPPSINRReport", booleanValue);
+  bool enable3GPPSINRReport = booleanValue.Get ();
+  
   GlobalValue::GetValueByName ("reducedPmValues", booleanValue);
   bool reducedPmValues = booleanValue.Get ();
 
@@ -403,10 +425,12 @@ main (int argc, char *argv[])
 
   Config::SetDefault ("ns3::MmWaveHelper::E2ModeLte", BooleanValue (e2lteEnabled));
   Config::SetDefault ("ns3::MmWaveHelper::E2ModeNr", BooleanValue (e2nrEnabled));
-  
-    Config::SetDefault ("ns3::LteEnbNetDevice::TracePath", StringValue (TracePath));
+  //Config::SetDefault ("ns3::MmWaveHelper::ReportRealTime", BooleanValue (reportRealTime));
+
+  Config::SetDefault ("ns3::LteEnbNetDevice::TracePath", StringValue (TracePath));
   Config::SetDefault ("ns3::MmWaveEnbNetDevice::TracePath", StringValue (TracePath));
-  
+    Config::SetDefault ("ns3::MmWaveEnbNetDevice::Enable3GPPSINRReport", BooleanValue (enable3GPPSINRReport));
+
 
   // The DU PM reports should come from both NR gNB as well as LTE eNB,
   // since in the RLC/MAC/PHY entities are present in BOTH NR gNB as well as LTE eNB.
@@ -428,6 +452,11 @@ main (int argc, char *argv[])
                       BooleanValue (enableE2FileLogging));
   Config::SetDefault ("ns3::MmWaveEnbNetDevice::EnableE2FileLogging",
                       BooleanValue (enableE2FileLogging));
+
+  Config::SetDefault ("ns3::LteEnbNetDevice::EnableE2MsgReporting",
+                      BooleanValue (enableE2MsgReporting));
+ Config::SetDefault ("ns3::MmWaveEnbNetDevice::EnableE2MsgReporting",
+                    BooleanValue (enableE2MsgReporting));
 
   Config::SetDefault ("ns3::MmWaveEnbMac::NumberOfRaPreambles",
                       UintegerValue (numberOfRaPreambles));

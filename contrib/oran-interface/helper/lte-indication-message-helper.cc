@@ -41,29 +41,44 @@ LteIndicationMessageHelper::AddCuUpUePmItem (std::string ueImsiComplete, long tx
                                              double pdcpLatency)
 {
   Ptr<MeasurementItemList> ueVal = Create<MeasurementItemList> (ueImsiComplete);
-
-  if (!m_reducedPmValues)
+  ueMeasItem uemeasitem;
+  uemeasitem.ueID = ueImsiComplete;
+  MeasItem measitem;
+  std::vector <MeasItem> measitems;
+  if (m_reducedPmValues)
     {
       // UE-specific PDCP SDU volume from LTE eNB. Unit is Mbits
       ueVal->AddItem<long> ("DRB.PdcpSduVolumeDl_Filter.UEID", txBytes);
-
+      measitem.measName = "DRB.PdcpSduVolumeDl_Filter.UEID";
+      measitem.measValue = txBytes;
+      measitems.push_back(measitem);
       // UE-specific number of PDCP SDUs from LTE eNB
       ueVal->AddItem<long> ("Tot.PdcpSduNbrDl.UEID", txDlPackets);
+      measitem.measName = "Tot.PdcpSduNbrDl.UEID";
+      measitem.measValue = txDlPackets;
+      measitems.push_back(measitem);
 
       // UE-specific Downlink IP combined EN-DC throughput from LTE eNB. Unit is kbps
       ueVal->AddItem<double> ("DRB.PdcpSduBitRateDl.UEID", pdcpThroughput);
+      measitem.measName = "DRB.PdcpSduBitRateDl.UEID";
+      measitem.measValue = pdcpThroughput;
+      measitems.push_back(measitem);
 
       //UE-specific Downlink IP combined EN-DC throughput from LTE eNB
       ueVal->AddItem<double> ("DRB.PdcpSduDelayDl.UEID", pdcpLatency);
+      measitem.measName = "DRB.PdcpSduDelayDl.UEID";
+      measitem.measValue = pdcpLatency;
+      measitems.push_back(measitem);
+      uemeasitem.measItems = measitems;
     }
-
   m_msgValues.m_ueIndications.insert (ueVal);
+  m_msgValues.m_UeMeasItems.push_back (uemeasitem);
 }
 
 void
 LteIndicationMessageHelper::AddCuUpCellPmItem (double cellAverageLatency)
 {
-  if (!m_reducedPmValues)
+  if (!m_reducedPmValues) // to be change !
     {
       Ptr<MeasurementItemList> cellVal = Create<MeasurementItemList> ();
       cellVal->AddItem<double> ("DRB.PdcpSduDelayDl", cellAverageLatency);

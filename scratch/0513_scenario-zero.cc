@@ -266,7 +266,7 @@ static ns3::GlobalValue
 static ns3::GlobalValue
     g_enableE2MsgReporting ("enableE2MsgReporting",
                            "If true, generate offline file logging instead of connecting to RIC",
-                           ns3::BooleanValue (false), ns3::MakeBooleanChecker ());
+                           ns3::BooleanValue (true), ns3::MakeBooleanChecker ());
 
 static ns3::GlobalValue g_controlFileName ("controlFileName",
                                            "The path to the control file (can be absolute)",
@@ -488,7 +488,7 @@ main (int argc, char *argv[])
   Config::SetDefault ("ns3::LteEnbRrc::HoSinrDifference", DoubleValue (hoSinrDifference));
 
   // Carrier bandwidth in Hz
-  double bandwidth = 20e6;
+  double bandwidth = 200e6;
   // Center frequency in Hz
   double centerFrequency = 3.5e9;
   // Distance between the mmWave BSs and the two co-located LTE and mmWave BSs in meters

@@ -41,6 +41,17 @@ extern "C" {
   #include "asn1c-types.h"
 }
 
+/** Create New Vector for test to be delted */
+struct MeasItem {
+  std::string measName;
+  long measValue;
+};
+struct ueMeasItem{
+  std::string ueID ;
+  std::vector <MeasItem> measItems;
+};
+/**/
+
 namespace ns3 {
 
   class KpmIndicationHeader : public SimpleRefCount<KpmIndicationHeader>
@@ -118,6 +129,7 @@ namespace ns3 {
   private:
     Ptr<OctetString> m_id; // ID, contains the UE IMSI if used to carry UE-specific measurement items
     std::vector<Ptr<MeasurementItem>> m_items; //!< list of Measurement Information Items
+
   public:
     MeasurementItemList ();
     MeasurementItemList (std::string ueId);
@@ -130,7 +142,7 @@ namespace ns3 {
       Ptr<MeasurementItem> item = Create<MeasurementItem> (name, value);
       m_items.push_back (item);
     }
-    
+
     std::vector<Ptr<MeasurementItem>> GetItems();
     OCTET_STRING_t GetId ();
   };
@@ -216,6 +228,9 @@ namespace ns3 {
     std::set<Ptr<CellResourceReport>> m_cellResourceReportItems;
   };
 
+    
+
+
   class KpmIndicationMessage : public SimpleRefCount<KpmIndicationMessage>
   {
   public:
@@ -229,6 +244,9 @@ namespace ns3 {
       Ptr<PmContainerValues> m_pmContainerValues; //!< struct containing values to be inserted in the PM Container
       Ptr<MeasurementItemList> m_cellMeasurementItems; //!< list of cell-specific Measurement Information Items
       std::set<Ptr<MeasurementItemList>> m_ueIndications; //!< list of Measurement Information Items
+      /** Create New Vector for test to be delted */
+      std::vector<ueMeasItem> m_UeMeasItems;
+      std::vector <MeasItem> m_CellMeasItems;
     };
 
     KpmIndicationMessage (KpmIndicationMessageValues values);

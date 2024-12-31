@@ -37,7 +37,7 @@ maxY = maxX
 rootName = 'trace/'
 i_num = 10 # 10 unit
 
-nUes = 4
+nUes = 12
 # Do iteration
 for i in range (0, i_num):
   basePathName = rootName+str(i_sim)+'_'+str(i)

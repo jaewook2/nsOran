@@ -440,6 +440,16 @@ KpmIndicationMessage::FillAndEncodeKpmIndicationMessage (E2SM_KPM_IndicationMess
     format->list_of_matched_UEs = (E2SM_KPM_IndicationMessage_Format1_t::E2SM_KPM_IndicationMessage_Format1__list_of_matched_UEs*) 
                                    calloc (1, sizeof (E2SM_KPM_IndicationMessage_Format1_t::E2SM_KPM_IndicationMessage_Format1__list_of_matched_UEs));
 
+    for (auto ueitem : values.m_UeMeasItems)
+      {
+        NS_LOG_UNCOND ("ueIdication->GetId " << ueitem.ueID);
+        for (auto mesitem : ueitem.measItems)
+        {
+            NS_LOG_UNCOND ("measurement name " << mesitem.measName);
+            NS_LOG_UNCOND ("measurement value %d" << mesitem.measValue);
+
+        }
+      }
 
     for (auto ueIndication : values.m_ueIndications)
       {
@@ -448,7 +458,7 @@ KpmIndicationMessage::FillAndEncodeKpmIndicationMessage (E2SM_KPM_IndicationMess
         // UE Identity
         perUEItem->ueId = ueIndication->GetId ();
         // xer_fprint (stderr, &asn_DEF_UE_Identity, &perUEItem->ueId);
-        // NS_LOG_UNCOND ("Values " << ueIndication->m_drbIPLateDlUEID);
+        NS_LOG_UNCOND ("ueIdication->GetId ");
 
         // List of Measurements PM information
         perUEItem->list_of_PM_Information =
@@ -459,6 +469,7 @@ KpmIndicationMessage::FillAndEncodeKpmIndicationMessage (E2SM_KPM_IndicationMess
         {
           ASN_SEQUENCE_ADD (&perUEItem->list_of_PM_Information->list,
             measurementItem->GetPointer ());
+            NS_LOG_UNCOND ("measurement->GetId ");
         }
         ASN_SEQUENCE_ADD (&format->list_of_matched_UEs->list, perUEItem);
       }
